@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>reactjs01</title>
+		<script src="../build/react.js"></script>
+		<script src="../build/react-dom.js"></script>
+		<script src="../build/browser.min.js"></script>
+	</head>
+	<body>
+		<div class="container1"></div>
+		<div class="container2"></div>
+		<script type="text/babel">
+			let arr = [
+				<p>hello</p>,
+				<p>world</p>
+			];
+			ReactDOM.render(
+				<div>{arr}</div>,
+				document.querySelector(".container1")
+				);
+		</script>
+	</body>
+</html>
