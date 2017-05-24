@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ui组件</title>
+		<script src="../build/react.js"></script>
+		<script src="../build/react-dom.js"></script>
+		<script src="../build/browser.min.js"></script>
+		<style type="text/css">
+		</style>
+</head>
+<body>
+	<div id="app"></div>
+	<script type="text/babel">
+
+		let ul_style = {
+			background: "blue",
+			height: "40px"	
+		};
+		let li_style = {
+			listStyle: "none",
+			float: "left",
+			height: "40px",
+			width: "100px",
+			textAlign: "center"	
+		}
+		let a_style = {
+			lineHeight: "40px",
+			color: "#fff",
+			textDecoration: "none"
+		}
+		let width_screen = document.body.clientWidth;
+		let El = React.createClass({
+
+			onc : function(){
+				alert(sadf);
+			},
+
+			render: function(){
+				if(width_screen > 500){
+				return (
+					<div className="container">
+						<ul style={ul_style}>
+							<li style={li_style} ><a href={this.props.ip.id[0]} style={a_style}>html</a></li>
+							<li style={li_style}><a href={this.props.ip.id[1]} style={a_style}>js</a></li>
+							<li style={li_style}><a href={this.props.ip.id[2]} style={a_style}>css</a></li>
+						</ul>
+						<p onClick={this.onc}>asdfas</p>
+					</div>
+
+				);				
+				} else {
+
+					return (
+						<div>
+							<p>小于500宽度</p>
+						</div>
+					);
+
+				}
+
+			}
+		});
+		let ip = {
+			id : ["http://www.baidu.com","http://www.yanwenjie.ren", "http://www.yaoyulu.ren"]
+		}
+
+		function r(obj){
+		ReactDOM.render(<El ip = {obj}/>, document.getElementById("app"));
+		}
+		r(ip);
+
+	</script>
+</body>
+</html>
